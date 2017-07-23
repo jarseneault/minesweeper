@@ -1,3 +1,11 @@
+from __future__ import print_function
+
+import sys
+
+if sys.version_info[0] <= 2:
+    range = xrange
+    input = raw_input
+
 from board import Board
 
 class Minesweeper:
