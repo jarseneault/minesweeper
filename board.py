@@ -35,8 +35,11 @@ class Board:
         for y in range(self.height):
             board_display.append("{:>3} ".format(y + 1))
             for x in range(self.width):
-                if self.finished:
-                    board_display.append(self.grid[y][x])
+                if self.finished and self.grid[y][x] == '*':
+                    if self.revealed[y][x] is True:
+                        board_display.append('X')
+                    else:
+                        board_display.append(self.grid[y][x])
                 else:
                     if self.revealed[y][x] is True:
                         num_adjacent_mines = self._get_num_adjacent_mines(x, y)
