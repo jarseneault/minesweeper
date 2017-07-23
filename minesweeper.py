@@ -86,7 +86,7 @@ class Minesweeper:
 
         while True:
             try:
-                x = str(input('Enter a column: '))
+                x = str(input('Enter a column: ')).upper()
                 if len(x) > 1:
                     raise ValueError('Invalid col')
                 else:
