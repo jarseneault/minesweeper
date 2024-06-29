@@ -1,4 +1,6 @@
-from __future__ import print_function
+# -*- coding: utf-8 -*-
+
+from __future__ import print_function, unicode_literals
 
 import random
 
@@ -26,7 +28,7 @@ class Board:
     def __str__(self):
         board_display = []
         letter_code = ord('A')
-        board_display.append('    ')
+        board_display.append('     ')
         for x in range(self.width):
             board_display.append(chr(letter_code))
             letter_code += 1
@@ -53,7 +55,7 @@ class Board:
                         board_display.append('?')
             board_display.append('\n')
 
-        return ''.join(board_display)
+        return " ".join(board_display)
 
     def _has_adjacent_revealed(self, x, y):
         squares_to_check = self._collect_adjacents(self.revealed, x, y)
